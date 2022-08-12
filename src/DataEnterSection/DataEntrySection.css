@@ -1,0 +1,40 @@
+.dataSection {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 7%;
+    margin: 0%;
+}
+
+.dataSection input {
+    width: 80%;
+    height: 26px;
+    padding: 0% 2% 0% 2%;
+    background-color: rgba(48, 48, 48, 0.058);
+    border: transparent;
+    border-radius: 5px 0px 0px 5px;
+    margin: 0%;
+}
+
+.dataSection input:focus {
+    background-color: rgba(48, 48, 48, 0.058);
+}
+
+.dataSection button {
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    height: 26px;
+    border: transparent;
+    background-color: rgb(157, 229, 240);
+    border-radius: 0px 5px 5px 0px;
+    color: black;
+    width: max-content;
+    padding: 0% 5% 0% 5%;
+    margin: 0%;
+}
+
+.dataSection button:hover {
+    background-color: rgb(47, 202, 226);
+    color: white;
+    cursor: pointer;
+}
