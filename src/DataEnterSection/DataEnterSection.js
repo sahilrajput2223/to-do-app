@@ -4,15 +4,19 @@ import "./DataEntrySection.css"
 
 const DataEnterSection = () => {
 
-    const [task, setTask] = React.useState({ task: "" });
+    const [task, setTask] = React.useState({ taskName: "" });
     const [taskList, setTaskList] = React.useState([]);
 
-    const handleOnChangeEvent = () => {
-
+    const handleOnChangeEvent = (event) => {
+        const name = event.target.name
+        const value = event.target.value
+        setTask({ ...task, [name]: value });
     }
 
-    const handleOnSubmitEvent = () => {
-
+    const handleOnSubmitEvent = (event) => {
+        event.preventDefault();
+        setTaskList([...taskList, task]);
+        setTask({ taskName: "" })
     }
 
     const handleOnResetEvent = () => {
@@ -22,8 +26,8 @@ const DataEnterSection = () => {
     return (
         <React.Fragment>
             <div className="container">
-                <form className="dataSection">
-                    <input type="text" id="todoTask" name="todoTask" placeholder="e.g. take break" />
+                <form className="dataSection" onSubmit={handleOnSubmitEvent} onReset={handleOnResetEvent}>
+                    <input type="text" id="todoTask" name="taskName" placeholder="e.g. take break" onChange={handleOnChangeEvent} value={task.taskName} />
                     <button>Submit</button>
                 </form>
 
