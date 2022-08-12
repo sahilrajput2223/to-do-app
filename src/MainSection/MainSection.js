@@ -4,6 +4,26 @@ import DataEnterSection from "../DataEnterSection/DataEnterSection";
 import "./MainSection.css"
 
 const MainSection = () => {
+
+    const [task, setTask] = React.useState({ taskName: "" });
+    const [taskList, setTaskList] = React.useState([]);
+
+    const handleOnChangeEvent = (event) => {
+        const name = event.target.name
+        const value = event.target.value
+        setTask({ ...task, [name]: value });
+    }
+
+    const handleOnSubmitEvent = (event) => {
+        event.preventDefault();
+        setTaskList([...taskList, task]);
+        setTask({ taskName: "" })
+    }
+
+    const handleOnResetEvent = () => {
+
+    }
+
     return (
         <React.Fragment>
             <div className="container">
@@ -11,7 +31,7 @@ const MainSection = () => {
                     <div className="col-md-12 com-sm-12">
                         <div className="mainSection">
                             <h3>To Do Things</h3>
-                            <DataEnterSection />
+                            <DataEnterSection taskData={task} handleOnChangeEvent={handleOnChangeEvent} handleOnResetEvent={handleOnResetEvent} handleOnSubmitEvent={handleOnSubmitEvent} />
                         </div>
                     </div>
                 </div>
