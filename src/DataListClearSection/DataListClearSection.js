@@ -2,10 +2,10 @@ import React from "react"
 
 import "./DataListClearSection.css"
 
-const DataListClearSection = () => {
+const DataListClearSection = ({ clearTask }) => {
     return (
         <React.Fragment>
-            <button className="taskClearBtn">Clear All Task</button>
+            <button className="taskClearBtn" onClick={clearTask}>Clear All Task</button>
         </React.Fragment>
     );
 }

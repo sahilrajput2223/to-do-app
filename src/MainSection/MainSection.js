@@ -27,6 +27,10 @@ const MainSection = () => {
 
     }
 
+    const clearAllTask = () => {
+        setTaskList([])
+    }
+
     return (
         <React.Fragment>
             <div className="container">
@@ -36,7 +40,7 @@ const MainSection = () => {
                             <h3>To Do Things</h3>
                             <DataEnterSection taskData={task} handleOnChangeEvent={handleOnChangeEvent} handleOnResetEvent={handleOnResetEvent} handleOnSubmitEvent={handleOnSubmitEvent} />
                             <DataListViewSection taskList={taskList} />
-                            <DataListClearSection />
+                            <DataListClearSection clearTask={clearAllTask} />
                         </div>
                     </div>
                 </div>
