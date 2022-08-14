@@ -67,7 +67,7 @@ const MainSection = () => {
                             <h3>To Do Things</h3>
                             <DataEnterSection idEdit={isEdit} taskData={task} handleOnChangeEvent={handleOnChangeEvent} handleOnResetEvent={handleOnResetEvent} handleOnSubmitEvent={handleOnSubmitEvent} />
                             <DataListViewSection taskList={taskList} removeSpecificTask={removeSpecificTask} editSpecificTask={editSpecificTask} />
-                            <DataListClearSection clearTask={clearAllTask} />
+                            {taskList.length > 0 && <DataListClearSection clearTask={clearAllTask} />}
                         </div>
                     </div>
                 </div>
