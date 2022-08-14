@@ -10,7 +10,7 @@ const DataListViewSection = ({ taskList }) => {
                     <div className="col-md-12 col-sm-12">
                         {taskList.map((task) => {
                             return (
-                                <div className="taskDetailsView row">
+                                <div className="taskDetailsView row" key={task.id}>
                                     <div className="col-md-6">
                                         {task.taskName}
                                     </div>

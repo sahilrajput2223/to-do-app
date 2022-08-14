@@ -1,5 +1,6 @@
 import React from "react"
 import DataEnterSection from "../DataEnterSection/DataEnterSection";
+import DataListClearSection from "../DataListClearSection/DataListClearSection";
 import DataListViewSection from "../DataListViewSection/DataListViewSection";
 
 import "./MainSection.css"
@@ -17,12 +18,17 @@ const MainSection = () => {
 
     const handleOnSubmitEvent = (event) => {
         event.preventDefault();
-        setTaskList([...taskList, task]);
+        const newTask = { ...task, id: new Date().getTime() }
+        setTaskList([...taskList, newTask]);
         setTask({ taskName: "" })
     }
 
     const handleOnResetEvent = () => {
 
+    }
+
+    const clearAllTask = () => {
+        setTaskList([])
     }
 
     return (
@@ -34,6 +40,7 @@ const MainSection = () => {
                             <h3>To Do Things</h3>
                             <DataEnterSection taskData={task} handleOnChangeEvent={handleOnChangeEvent} handleOnResetEvent={handleOnResetEvent} handleOnSubmitEvent={handleOnSubmitEvent} />
                             <DataListViewSection taskList={taskList} />
+                            <DataListClearSection clearTask={clearAllTask} />
                         </div>
                     </div>
                 </div>
