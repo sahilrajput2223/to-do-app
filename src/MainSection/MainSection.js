@@ -33,7 +33,7 @@ const MainSection = () => {
                         <div className="mainSection">
                             <h3>To Do Things</h3>
                             <DataEnterSection taskData={task} handleOnChangeEvent={handleOnChangeEvent} handleOnResetEvent={handleOnResetEvent} handleOnSubmitEvent={handleOnSubmitEvent} />
-                            <DataListViewSection />
+                            <DataListViewSection taskList={taskList} />
                         </div>
                     </div>
                 </div>
