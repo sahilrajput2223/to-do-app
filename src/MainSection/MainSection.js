@@ -17,7 +17,8 @@ const MainSection = () => {
 
     const handleOnSubmitEvent = (event) => {
         event.preventDefault();
-        setTaskList([...taskList, task]);
+        const newTask = { ...task, id: new Date().getTime() }
+        setTaskList([...taskList, newTask]);
         setTask({ taskName: "" })
     }
 
