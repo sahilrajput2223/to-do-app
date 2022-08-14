@@ -1,7 +1,9 @@
 .taskClearBtn {
     background: transparent;
     border: transparent;
-    padding-top: 5%;
+    margin-top: 5%;
     color: red;
     cursor: pointer;
+    letter-spacing: 1.5px;
+    font-style: italic;
 }
