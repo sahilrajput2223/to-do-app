@@ -2,7 +2,7 @@ import React from "react"
 
 import "./DataListViewSection.css"
 
-const DataListViewSection = ({ taskList }) => {
+const DataListViewSection = ({ taskList, removeSpecificTask }) => {
     return (
         <React.Fragment>
             <div className="container">
@@ -15,7 +15,7 @@ const DataListViewSection = ({ taskList }) => {
                                         {task.taskName}
                                     </div>
                                     <div className="col-md-6">
-                                        <i className="fa fa-trash iconDesign" id="deleteIcon" aria-hidden="true"></i>
+                                        <i className="fa fa-trash iconDesign" onClick={() => removeSpecificTask(task.id)} id="deleteIcon" aria-hidden="true"></i>
                                         <i className="fa fa-pencil iconDesign" id="editIcon" aria-hidden="true"></i>
                                     </div>
                                 </div>

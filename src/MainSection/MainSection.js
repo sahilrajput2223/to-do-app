@@ -31,6 +31,12 @@ const MainSection = () => {
         setTaskList([])
     }
 
+    const removeSpecificTask = (taskId) => {
+        setTaskList(taskList.filter((task) => {
+            return task.id !== taskId
+        }))
+    }
+
     return (
         <React.Fragment>
             <div className="container">
@@ -39,7 +45,7 @@ const MainSection = () => {
                         <div className="mainSection">
                             <h3>To Do Things</h3>
                             <DataEnterSection taskData={task} handleOnChangeEvent={handleOnChangeEvent} handleOnResetEvent={handleOnResetEvent} handleOnSubmitEvent={handleOnSubmitEvent} />
-                            <DataListViewSection taskList={taskList} />
+                            <DataListViewSection taskList={taskList} removeSpecificTask={removeSpecificTask} />
                             <DataListClearSection clearTask={clearAllTask} />
                         </div>
                     </div>
