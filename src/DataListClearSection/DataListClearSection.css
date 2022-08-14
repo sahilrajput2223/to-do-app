@@ -1,0 +1,7 @@
+.taskClearBtn {
+    background: transparent;
+    border: transparent;
+    padding-top: 5%;
+    color: red;
+    cursor: pointer;
+}

@@ -1,5 +1,6 @@
 import React from "react"
 import DataEnterSection from "../DataEnterSection/DataEnterSection";
+import DataListClearSection from "../DataListClearSection/DataListClearSection";
 import DataListViewSection from "../DataListViewSection/DataListViewSection";
 
 import "./MainSection.css"
@@ -35,6 +36,7 @@ const MainSection = () => {
                             <h3>To Do Things</h3>
                             <DataEnterSection taskData={task} handleOnChangeEvent={handleOnChangeEvent} handleOnResetEvent={handleOnResetEvent} handleOnSubmitEvent={handleOnSubmitEvent} />
                             <DataListViewSection taskList={taskList} />
+                            <DataListClearSection />
                         </div>
                     </div>
                 </div>
